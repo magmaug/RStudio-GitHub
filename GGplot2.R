@@ -8,26 +8,21 @@ library(tidyverse)
 Farm <- read_excel("Farm_system.xlsx")
 child_data <- read_excel("Child_data.xlsx")
 
-#load R dataset iris
-data(iris)
-iris
-
-#Plot a scatter plot Sepal.Length and Petal.Length
-ggplot(iris, aes(x=Sepal.Length, y=Petal.Length)) + 
+#Plot bacillulus vs acidimicrobium
+ggplot(Farm, aes(x=acidimicrobium, y=bacillus)) + 
   geom_point() + 
-  labs(title= "Scatter plot", x= "Sepal.Length",y= "Petal.Length")
+  labs(title= "Scatter plot", x= "acidimicrobium",y= "bacillus")
 
-#Add smooth line
-ggplot(iris, aes(x=Sepal.Length, y=Petal.Length)) + 
+#Add a smooth line
+ggplot(Farm, aes(x=acidimicrobium, y=bacillus)) + 
   geom_point() + 
   geom_smooth()+
-  labs(title= "Scatter plot", x= "Sepal.Length",y= "Petal.Length")
+  labs(title= "Scatter plot", x= "acidimicrobium",y= "bacillus")
 
-#Add straight line
-ggplot(iris, aes(x=Sepal.Length, y=Petal.Length)) + 
+#Add a smooth straight line
+ggplot(Farm, aes(x=acidimicrobium, y=bacillus)) + 
   geom_point() + 
   geom_smooth(method="lm")+
-  labs(title= "Scatter plot", x= "Sepal.Length",y= "Petal.Length")
-
+  labs(title= "Scatter plot", x= "acidimicrobium",y= "bacillus")
 
 
